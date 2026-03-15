@@ -1,0 +1,19 @@
+{
+  "welcome": "Bienvenido",
+  "hello": "Hola",
+  "home": {
+    "title": "Personajes de Harry Potter",
+    "description": "Explora el universo mágico de Harry Potter: un listado completo de personajes con su casa, especie y datos principales."
+  },
+  "footer":{
+    "derechos": "2026 Harry Potter. Todos los derechos reservados",
+    "propiedad": "Desarrollado para: ISIS3710"
+  },
+  "page":{
+    "genero": "Género",
+    "casa": "Casa",
+    "varita": "Varita",
+    "madera": "Madera",
+    "longitud": "Longitud"
+  } 
+}

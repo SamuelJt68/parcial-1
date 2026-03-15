@@ -1,12 +1,17 @@
 import React from "react";
+import type { Dictionary } from '@/app/[lang]/dictionaries';
 
-export default function Footer() {
+type FooterDict = {
+  dict: Dictionary;  
+};
 
+export default async function Footer({ dict }: FooterDict) {
     return(
-        <div className="bg-#BBCCBB flex">
-            <p className="selft-center ml-[5%]">2026 Harry Potter. Todos los derechos reservados.</p>
-            <p className="selft-end mr-[5%] ">Desarrollado Para: ISIS3710</p>
+        <footer className="bg-[#BBCCBB] h-auto">
+        <div className="flex">
+            <p className="pl-[15%] mt-[0.5%] ">{dict.footer.derechos}</p>
+            <p className="pl-[30%] mt-[0.5%]">{dict.footer.propiedad}</p>
         </div>
+        </footer>
     )
-
 }

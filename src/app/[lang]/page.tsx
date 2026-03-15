@@ -5,23 +5,35 @@ import getDatos from "@/components/Api"
 import { Card_description } from "@/components/Card";
 import { Card } from "@/components/Card";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export default async function Home({ any: params }) {
-  const { lang } = await params
+export const metadata: Metadata = {
+  title: "Listado de personajes - HarryPotterApp",
+  description: "Explora el universo mágico de Harry Potter: un listado completo de personajes con su casa, especie y datos principales.",
+};
 
-  if (!hasLocale(lang)) notFound()  // 404 si locale inválido
+export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+
+  if (!hasLocale(lang)) notFound() 
 
   const dict = await getDictionary(lang)
   const datos = await getDatos();
 
   return (
-    <Link href = "/[id]" className="bg-#e0e0e0">
-      {datos?.slice().map((post) => (
-                <Card key={post.id} id={post.id} image={post.image} name={post.name}  >
-                </Card>
-              ))}
-    </Link>
-    
+    <div className="bg-[#e0e0e0] h-auto"> 
+    <h1 className="text-center pt-[3%]">{dict.home.title}</h1>
+    <p className="text-center">{dict.home.description}</p>
+    <div className="grid grid-cols-3 mt-[3%] pb-[3%] items-center gap-12 mx-auto max-w-[980]">
+  {datos?.slice(0, 12).map((post:any) => (
+    <div key={post.id} className="ml-[14%] mr-[10%]">
+      <Link href={`/${lang}/${post.id}`}>
+      <Card id={post.id} image={post.image} name={post.name} house={post.house} />
+      </Link>
+    </div>
+      ))}
+    </div>
+    </div>
   )
 }
 

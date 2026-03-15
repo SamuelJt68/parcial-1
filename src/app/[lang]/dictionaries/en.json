@@ -1,0 +1,19 @@
+{
+  "welcome": "Welcome",
+  "hello": "Hello",
+  "home": {
+    "title": "Harry Potter Characters",
+    "description": "Explore the magical universe of Harry Potter: a complete list of characters with their house, species, and main details."
+  },
+  "footer":{
+    "derechos": "© 2026 Harry Potter. All rights reserved.",
+    "propiedad": "Desarrollado para: ISIS3710"
+  },
+  "page":{
+    "genero": "Gender",
+    "casa": "House",
+    "varita": "Wand",
+    "madera": "Wood",
+    "longitud": "langth"
+  } 
+}
